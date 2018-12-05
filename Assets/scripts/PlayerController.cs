@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
     [Range(0f, 1f)]
     public float distToGroundPadding;
     
-    [Range(0f, 1.2f)]
+    [Range(0f, 2f)]
     public float airborneSpeed;
     
     [Range(1f, 1.1f)]
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
         baseMoveSpeed = moveSpeed;
         mesh = GetComponent<MeshRenderer>();
         red = mesh.material;
-        acc = Physics.gravity;
+        acc = Physics.gravity = new Vector3(0, -9.8f, 0);
 	}
 	
 	// Update is called once per frame
@@ -124,8 +124,8 @@ public class PlayerController : MonoBehaviour {
             rb.velocity = new Vector3(rb.velocity.x * horizontalJumpScale, jumpVelocity, rb.velocity.z * verticalJumpScale);
         }
 
-        Debug.Log(Physics.gravity);
-        Debug.Log(rb.velocity);
+        //Debug.Log(Physics.gravity);
+        //Debug.Log(rb.velocity);
     }
 
     private void commands()

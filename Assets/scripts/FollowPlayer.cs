@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
 
-    public Transform target;
-    
+    public GameObject player;
+    private PlayerCollision col;
+
     [SerializeField]
     private Vector3 offset;
 
@@ -14,6 +15,7 @@ public class FollowPlayer : MonoBehaviour {
     [SerializeField]
     private float unblockTime;
 
+    private float time = 3f;
     private float cameraBlockedRemember;
     private float prevPosBlockedRemember;
     private Vector3 initialOffset;
@@ -24,6 +26,7 @@ public class FollowPlayer : MonoBehaviour {
     void Start () {
         cam = GetComponent<Camera>();
         initialOffset = offset;
+        col = player.GetComponent<PlayerCollision>();
 	}
 	
 	// Update is called once per frame
@@ -57,8 +60,23 @@ public class FollowPlayer : MonoBehaviour {
             offset = initialOffset;
         }
         */
-        transform.position = target.transform.position + offset;
         
+        if (!col.isDead)
+        {
+            transform.position = player.transform.position + offset;
+        }
+        else if(time > 0)
+        {
+            time -= Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 10f * Time.deltaTime);
+            transform.LookAt(player.transform);
+        }
+        else {
+            transform.LookAt(player.transform);
+        }
+
+
+
     }
 
     Vector3 offsetChange(Vector3 vec)
