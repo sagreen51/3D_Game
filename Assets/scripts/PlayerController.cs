@@ -22,12 +22,10 @@ public class PlayerController : MonoBehaviour {
 
     [Range(0f, 1f)]
     public float distToGroundPadding;
-
-    /*
+    
     [Range(0f, 1.2f)]
     public float airborneSpeed;
-    */
-
+    
     [Range(1f, 1.1f)]
     public float horizontalJumpScale;
     [Range(1f, 1.1f)]
@@ -76,7 +74,8 @@ public class PlayerController : MonoBehaviour {
                 Physics.gravity = acc * 4f;
             }
 
-            //moveSpeed = airborneSpeed;
+            moveSpeed = airborneSpeed;
+            rb.velocity = new Vector3(rb.velocity.x * horizontalJumpScale, rb.velocity.y, rb.velocity.z * verticalJumpScale);
 
             horizontal = rb.velocity.x;
             horizontal += Input.GetAxisRaw("Horizontal");

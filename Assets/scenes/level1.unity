@@ -325,19 +325,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1056e3e3b0b4fc4295a4bc26c83cb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.22
+  moveSpeed: 1.25
   rb: {fileID: 0}
   jumpVelocity: 10
   col: {fileID: 0}
   green: {fileID: 2100000, guid: 4ec6677d04043f740a2926de86d2d7f1, type: 2}
   pink: {fileID: 2100000, guid: aa823676e5c65104ea17c2aaeef6bbae, type: 2}
-  horizontalDamping: 0.8
-  verticalDamping: 0.8
-  horizontalJumpDamping: 0.82
-  verticalJumpDamping: 0.82
+  horizontalDamping: 0.85
+  verticalDamping: 0.85
+  horizontalJumpDamping: 0.8
+  verticalJumpDamping: 0.8
   distToGroundPadding: 0.15
-  horizontalJumpScale: 1.0635
-  verticalJumpScale: 1.0646
+  airborneSpeed: 1.2
+  horizontalJumpScale: 1.04
+  verticalJumpScale: 1.04
   jumpPressedRememberTime: 0.15
   groundedRememberTime: 0.15
 --- !u!114 &582893656
