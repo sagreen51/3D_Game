@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    [Range(0f, 1.25f)]
     public float moveSpeed;
+    [Range(0f, 1.25f)]
+    public float runSpeed;
+
     public Rigidbody rb;
     public float jumpVelocity;
     public Collider col;
@@ -23,14 +27,6 @@ public class PlayerController : MonoBehaviour {
     [Range(0f, 1f)]
     public float distToGroundPadding;
     
-    [Range(0f, 2f)]
-    public float airborneSpeed;
-    
-    [Range(1f, 1.1f)]
-    public float horizontalJumpScale;
-    [Range(1f, 1.1f)]
-    public float verticalJumpScale;
-
     [SerializeField]
     private float jumpPressedRememberTime;
     [SerializeField]
@@ -46,6 +42,7 @@ public class PlayerController : MonoBehaviour {
     private Material red;
     private Vector3 velocity;
     private Vector3 acc;
+    private float runVel;
     
 	// Use this for initialization
 	void Start () {
@@ -68,15 +65,29 @@ public class PlayerController : MonoBehaviour {
 
     private void movement()
     {
+        if (runVel > 0.19f) //deadzone
+        {
+            moveSpeed = runSpeed;
+        }
+        else
+        {
+            moveSpeed = baseMoveSpeed;
+        }
+        
         if (!isGrounded())  //if airborne
         {
-            if(rb.velocity.y < (jumpVelocity / 1.5f)) {
-                Physics.gravity = acc * 4f;
+            if(rb.velocity.y < (jumpVelocity/1.15))
+            {
+                if (groundedRemember != groundedRememberTime)
+                {
+                    Physics.gravity = acc * 4f;
+                }
+                else
+                {
+                    Physics.gravity = acc;
+                }
             }
-
-            moveSpeed = airborneSpeed;
-            rb.velocity = new Vector3(rb.velocity.x * horizontalJumpScale, rb.velocity.y, rb.velocity.z * verticalJumpScale);
-
+            
             horizontal = rb.velocity.x;
             horizontal += Input.GetAxisRaw("Horizontal");
             horizontal *= Mathf.Pow(1f - horizontalJumpDamping, Time.deltaTime * 10f);
@@ -87,7 +98,7 @@ public class PlayerController : MonoBehaviour {
         }
         else 
         {
-            if(moveSpeed != baseMoveSpeed)
+            if(moveSpeed != runSpeed && moveSpeed != baseMoveSpeed)
             {
                 moveSpeed = baseMoveSpeed;
             }
@@ -121,9 +132,9 @@ public class PlayerController : MonoBehaviour {
         {
             jumpPressedRemember = 0;
             groundedRemember = 0;
-            rb.velocity = new Vector3(rb.velocity.x * horizontalJumpScale, jumpVelocity, rb.velocity.z * verticalJumpScale);
+            rb.velocity = new Vector3(rb.velocity.x, jumpVelocity, rb.velocity.z);
         }
-
+        
         //Debug.Log(Physics.gravity);
         //Debug.Log(rb.velocity);
     }
@@ -143,11 +154,14 @@ public class PlayerController : MonoBehaviour {
         {
             mesh.material = red;
         }
+
+        runVel = -Input.GetAxis("Run");
     }
 
     public bool isGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + distToGroundPadding);
+        
     }
     
 }

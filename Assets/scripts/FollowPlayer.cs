@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
-
-    public GameObject player;
-    private PlayerCollision col;
+    
+    [SerializeField]
+    private Player player;
 
     [SerializeField]
     private Vector3 offset;
@@ -26,7 +26,6 @@ public class FollowPlayer : MonoBehaviour {
     void Start () {
         cam = GetComponent<Camera>();
         initialOffset = offset;
-        col = player.GetComponent<PlayerCollision>();
 	}
 	
 	// Update is called once per frame
@@ -61,7 +60,7 @@ public class FollowPlayer : MonoBehaviour {
         }
         */
         
-        if (!col.isDead)
+        if (!player.isDead)
         {
             transform.position = player.transform.position + offset;
         }
