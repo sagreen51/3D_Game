@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 
     private void movement()
     {
-        if (runVel > 0.19f) //deadzone
+        if (runVel > 0.19f || Input.GetButton("Run")) //deadzone
         {
             moveSpeed = runSpeed;
         }
