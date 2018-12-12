@@ -46,20 +46,20 @@ public class FollowPlayer : MonoBehaviour {
 
         if((cameraBlockedRemember > 0))       //if camera gets blocked
         {
-            prevPos = transform.position;
             offset = offsetChange(offset);
+            transform.LookAt(player.transform);
         }
         else if ((prevPosBlockedRemember > 0))
         {
-            prevPos = target.transform.position + initialOffset;
-            offset = offsetChange(offset);
+            transform.LookAt(player.transform);
         }
         else
         {
             offset = initialOffset;
+            prevPos = transform.position;
         }
         */
-        
+
         if (!player.isDead)
         {
             transform.position = player.transform.position + offset;
@@ -73,21 +73,19 @@ public class FollowPlayer : MonoBehaviour {
         else {
             transform.LookAt(player.transform);
         }
-
-
-
+        
     }
 
     Vector3 offsetChange(Vector3 vec)
     {
-        vec.y = 1.5f;
-
+        vec.x = -3f;
+        vec.y += 3f;
         return vec;
     }
 
     bool isBlocked(Vector3 initialPos)
     {
-        return Physics.Raycast(initialPos, -offset, offset.magnitude - 1.5f);
+        return Physics.Raycast(prevPos, -offset, offset.magnitude - 1.5f);
         
     }
 

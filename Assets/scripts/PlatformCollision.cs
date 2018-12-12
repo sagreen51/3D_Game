@@ -7,23 +7,26 @@ public class PlatformCollision : MonoBehaviour {
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private float desTime;
-    
+    private float disableTime;
+    [SerializeField]
+    private float enableTime;
+
+
     private Animator anim;
     private Collider col;
-    private Material mat;
+    private MeshRenderer mesh;
     private bool destroyed;
 
 	// Use this for initialization
 	void Start () {
         col = GetComponent<Collider>();
-        mat = GetComponent<MeshRenderer>().material;
+        mesh = GetComponent<MeshRenderer>();
         anim = GetComponent<Animator>();
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<MeshRenderer>().material.name != mat.name)
+        if (collision.collider.GetComponent<MeshRenderer>().material.name != mesh.material.name)
         {
             if(!destroyed)
             {
@@ -36,7 +39,7 @@ public class PlatformCollision : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.collider.GetComponent<MeshRenderer>().material.name != mat.name)
+        if(collision.collider.GetComponent<MeshRenderer>().material.name != mesh.material.name)
         {
             if (!destroyed)
             {
@@ -49,14 +52,26 @@ public class PlatformCollision : MonoBehaviour {
 
     private void remove()
     {
-        StartCoroutine(delayedDestroy(desTime));
+        StartCoroutine(delayedDisable(disableTime));
+        StartCoroutine(delayedEnable(enableTime));
     }
 
-    IEnumerator delayedDestroy(float time)
+    IEnumerator delayedDisable(float time)
     {
 
         yield return new WaitForSeconds(time);
-        Destroy(this.gameObject);
+        col.enabled = false;
+        mesh.enabled = false;
+        player.GetComponent<PlayerController>().isOnWall = false;
+    }
+
+    IEnumerator delayedEnable(float time)
+    {
+        yield return new WaitForSeconds(time);
+        col.enabled = true;
+        mesh.enabled = true;
+        anim.Rebind();
+        destroyed = false;
     }
 
 }

@@ -12,7 +12,10 @@ public class Player : MonoBehaviour {
     
     private PlayerController player;
     private Rigidbody rb;
-    
+
+    private string[] starsCollected = new string[5];
+    private int starIndex = 0;
+
     void Start()
     {
         player = GetComponent<PlayerController>();
@@ -46,5 +49,15 @@ public class Player : MonoBehaviour {
 
         yield return new WaitForSeconds(reloadTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void CollectStar(string starColor)
+    {
+        starsCollected[starIndex++] = starColor;
+    }
+
+    public string[] getStars()
+    {
+        return starsCollected;
     }
 }

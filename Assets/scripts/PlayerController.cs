@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour {
     private Vector3 velocity;
     private Vector3 acc;
     private float runVel;
-    private bool isOnWall;
+    [HideInInspector]
+    public bool isOnWall;
     
 	// Use this for initialization
 	void Start () {
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour {
         {
             jumpPressedRemember = jumpPressedRememberTime;
         }
-        Debug.Log(isOnWall);
+
         if ((jumpPressedRemember > 0) && ((groundedRemember > 0) || isOnWall))
         {
             jumpPressedRemember = 0;
