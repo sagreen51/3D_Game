@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-    [Range(0f, 1.25f)]
+    
     public float moveSpeed;
-    [Range(0f, 1.25f)]
     public float runSpeed;
 
     public Rigidbody rb;
@@ -31,7 +29,9 @@ public class PlayerController : MonoBehaviour {
     private float jumpPressedRememberTime;
     [SerializeField]
     private float groundedRememberTime;
-    
+    [SerializeField]
+    private float deltaTimeMultiplier;
+
     private float jumpPressedRemember;
     private float groundedRemember;
     private float horizontal;
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 velocity;
     private Vector3 acc;
     private float runVel;
+    private bool isOnWall;
     
 	// Use this for initialization
 	void Start () {
@@ -90,11 +91,11 @@ public class PlayerController : MonoBehaviour {
             
             horizontal = rb.velocity.x;
             horizontal += Input.GetAxisRaw("Horizontal");
-            horizontal *= Mathf.Pow(1f - horizontalJumpDamping, Time.deltaTime * 10f);
+            horizontal *= Mathf.Pow(1f - horizontalJumpDamping, Time.deltaTime * deltaTimeMultiplier);
 
             vertical = rb.velocity.z;
             vertical += Input.GetAxisRaw("Vertical");
-            vertical *= Mathf.Pow(1f - verticalJumpDamping, Time.deltaTime * 10f);
+            vertical *= Mathf.Pow(1f - verticalJumpDamping, Time.deltaTime * deltaTimeMultiplier);
         }
         else 
         {
@@ -106,16 +107,14 @@ public class PlayerController : MonoBehaviour {
 
             horizontal = rb.velocity.x;
             horizontal += Input.GetAxisRaw("Horizontal");
-            horizontal *= Mathf.Pow(1f - horizontalDamping, Time.deltaTime * 10f);
+            horizontal *= Mathf.Pow(1f - horizontalDamping, Time.deltaTime * deltaTimeMultiplier);
 
             vertical = rb.velocity.z;
             vertical += Input.GetAxisRaw("Vertical");
-            vertical *= Mathf.Pow(1f - verticalDamping, Time.deltaTime * 10f);
+            vertical *= Mathf.Pow(1f - verticalDamping, Time.deltaTime * deltaTimeMultiplier);
 
         }
         
-        rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
-
         groundedRemember -= Time.deltaTime;
         if (isGrounded())
         {
@@ -127,16 +126,18 @@ public class PlayerController : MonoBehaviour {
         {
             jumpPressedRemember = jumpPressedRememberTime;
         }
-
-        if ((jumpPressedRemember > 0) && (groundedRemember > 0))
+        Debug.Log(isOnWall);
+        if ((jumpPressedRemember > 0) && ((groundedRemember > 0) || isOnWall))
         {
             jumpPressedRemember = 0;
             groundedRemember = 0;
             rb.velocity = new Vector3(rb.velocity.x, jumpVelocity, rb.velocity.z);
         }
+        else
+        {
+            rb.velocity = new Vector3(horizontal * moveSpeed, rb.velocity.y, vertical * moveSpeed);
+        }
         
-        //Debug.Log(Physics.gravity);
-        //Debug.Log(rb.velocity);
     }
 
     private void commands()
@@ -163,5 +164,17 @@ public class PlayerController : MonoBehaviour {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + distToGroundPadding);
         
     }
-    
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.tag == "Wall")
+        {
+            isOnWall = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        isOnWall = false;
+    }
 }
