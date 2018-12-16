@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour {
         
         if (!isGrounded())  //if airborne
         {
-            if(rb.velocity.y < (jumpVelocity/1.15))
+            if (rb.velocity.y < (jumpVelocity / 1.15))
             {
                 if (groundedRemember != groundedRememberTime)
                 {
@@ -88,6 +88,10 @@ public class PlayerController : MonoBehaviour {
                 {
                     Physics.gravity = acc;
                 }
+            }
+            else if(isOnWall)
+            {
+                Physics.gravity = acc * 2f;
             }
             
             horizontal = rb.velocity.x;
