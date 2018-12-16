@@ -7,6 +7,7 @@ Keyboard
 --------
 
 WASD - move
+
 [ - 	pink
 ] - 	green
 \ - 	red
