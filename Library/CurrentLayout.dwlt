@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 471}
   m_MaxSize: {x: 18008, y: 14021}
   vertical: 0
-  controlID: 7528
+  controlID: 6113
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 471}
   m_MaxSize: {x: 14006, y: 14021}
   vertical: 0
-  controlID: 7529
+  controlID: 6114
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 471}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 7462
+  controlID: 6134
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 421}
   m_MaxSize: {x: 4004, y: 8021}
   vertical: 1
-  controlID: 7530
+  controlID: 6115
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -369,18 +369,18 @@ MonoBehaviour:
       y: 17
       width: 880
       height: 296
-    m_Scale: {x: 1.2512504, y: 1.2512504}
-    m_Translation: {x: 439.7326, y: 147.97073}
+    m_Scale: {x: 1.2556362, y: 1.2556362}
+    m_Translation: {x: 439.8557, y: 147.87827}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -351.43454
-      y: -118.25829
-      width: 703.2965
-      height: 236.56337
+      x: -350.30505
+      y: -117.77158
+      width: 700.8399
+      height: 235.73706
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 582d0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1472fdff7486feffa841ffff0e50ffff3051ffff3c73ffffc0dcffffd0ddfffff6dfffff92f8ffffe0fbffff000000008e3d00009a3d0000b43d0000e8440000c04500002e4600008a53000090530000a2530000ac530000cc530000d6530000b25e0000
+    m_SelectedIDs: 78300000
+    m_LastClickedID: 12408
+    m_ExpandedIDs: e0fbffff000000006a300000783000008a300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -465,7 +465,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92.8
-    width: 400
+    width: 311
     height: 308
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &17
@@ -505,20 +505,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/scenes
+    - Assets/scripts
   m_ViewMode: 1
   m_StartGridSize: 39
   m_LastFolders:
-  - Assets/scenes
+  - Assets/scripts
   m_LastFoldersGridSize: 39
   m_LastProjectPath: C:\Unity\Projects\3D-Game\Trash-Boat-Games
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1e2c0000
-    m_LastClickedID: 11294
-    m_ExpandedIDs: 00000000802b0000082c0000ea2c0000842e0000522f0000762f0000c82f00009e300000a0300000a2300000
+    m_SelectedIDs: f42c0000
+    m_LastClickedID: 11508
+    m_ExpandedIDs: 00000000802b0000082c0000f02c0000922e0000682f00008c2f0000de2f0000d4300000d6300000d8300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,7 +546,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000802b0000082c0000ea2c0000842e0000522f0000762f0000c82f00009e300000a0300000a2300000
+    m_ExpandedIDs: 00000000802b0000082c0000f02c0000922e0000682f00008c2f0000de2f0000d4300000d6300000d8300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -99630
+  m_LastSelectedObjectID: 12408
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52

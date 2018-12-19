@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadingMenu()
     {
+        ExecuteAfterTime(5);
         SceneManager.LoadScene(1);
     }
 
@@ -28,6 +29,12 @@ public class MainMenu : MonoBehaviour {
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+
     }
 
 }
