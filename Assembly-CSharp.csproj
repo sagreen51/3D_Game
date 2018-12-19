@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MonstroController.cs" />
     <Compile Include="Assets\scripts\CanvasText.cs" />
     <Compile Include="Assets\scripts\FollowPlayer.cs" />
     <Compile Include="Assets\scripts\MainMenu.cs" />
@@ -69,6 +70,11 @@
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\Star.cs" />
     <Compile Include="Assets\scripts\Triggers\Triggers.cs" />
+    <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\LookCamera.cs" />
+    <Compile Include="Assets\SpaceSkies Free\Demo\Scripts\SkyboxChanger.cs" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Unity/Projects/3D-Game/Trash-Boat-Games/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Unity/Projects/3D-Game/Trash-Boat-Games/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -77,9 +83,6 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Unity/Projects/3D-Game/Trash-Boat-Games/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Unity/Projects/3D-Game/Trash-Boat-Games/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
