@@ -18,7 +18,7 @@ public class MonstroController : MonoBehaviour {
 
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform;
+        //target = GameObject.FindWithTag("Player").transform;
 
     }
 

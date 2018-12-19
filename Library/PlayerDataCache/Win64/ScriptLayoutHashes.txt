@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Unity/Projects/3D-Game/Trash-Boat-Games/builds/Rainbow Rush 5 12_18_18/Rainbow Rush.exe
+C:/Unity/Projects/3D-Game/Trash-Boat-Games/builds/Rainbow Rush 6 12_18_18/Rainbow Rush.exe
 SceneListBegin?
 Assets/scenes/title-splash.unity
 Assets/scenes/MainMenu.unity
