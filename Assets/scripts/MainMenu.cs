@@ -7,23 +7,27 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadingMenu()
     {
-        ExecuteAfterTime(5);
-        SceneManager.LoadScene(1);
+        StartCoroutine(loadscreen(.3f, 1));
+
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(loadscreen(.3f, 2));
+
+
     }
 
     public void Instructions()
     {
-        SceneManager.LoadScene(3);
+        StartCoroutine(loadscreen(.3f, 3));
+
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene(4);
+        StartCoroutine(loadscreen(.3f, 4));
+
     }
 
     public void ExitGame()
@@ -31,10 +35,10 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
 
-    public IEnumerator ExecuteAfterTime(float time)
+    public IEnumerator loadscreen(float time, int screenIndex)
     {
-        yield return new WaitForSecondsRealtime(time);
-
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(screenIndex);
     }
 
 }
