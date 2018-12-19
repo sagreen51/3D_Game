@@ -1,4 +1,141 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 5b95c368d9b8b824ba6110fe1cbb2c6b
+timeCreated: 1544942172
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: node_id10
+    100004: node_id12
+    100006: node_id14
+    100008: node_id16
+    100010: node_id18
+    100012: node_id20
+    100014: node_id22
+    100016: node_id24
+    100018: node_id26
+    100020: node_id28
+    100022: node_id30
+    100024: node_id32
+    100026: node_id34
+    100028: node_id36
+    100030: node_id38
+    100032: node_id40
+    100034: node_id5
+    100036: node_id6
+    100038: node_id8
+    400000: //RootNode
+    400002: node_id10
+    400004: node_id12
+    400006: node_id14
+    400008: node_id16
+    400010: node_id18
+    400012: node_id20
+    400014: node_id22
+    400016: node_id24
+    400018: node_id26
+    400020: node_id28
+    400022: node_id30
+    400024: node_id32
+    400026: node_id34
+    400028: node_id36
+    400030: node_id38
+    400032: node_id40
+    400034: node_id5
+    400036: node_id6
+    400038: node_id8
+    2100000: Material_48
+    2100002: Material_49
+    2100004: Material_50
+    2100006: Material_51
+    2100008: Material_52
+    2100010: Material_53
+    2100012: Material_54
+    2100014: Material_55
+    2100016: Material_56
+    2100018: Material_57
+    2100020: Material_58
+    2100022: Material_122
+    2100024: Material_124
+    2100026: Material_126
+    2100028: Material_128
+    2100030: Material_63
+    2100032: Material_64
+    2300000: node_id10
+    2300002: node_id12
+    2300004: node_id14
+    2300006: node_id16
+    2300008: node_id18
+    2300010: node_id20
+    2300012: node_id22
+    2300014: node_id24
+    2300016: node_id26
+    2300018: node_id28
+    2300020: node_id30
+    2300022: node_id32
+    2300024: node_id34
+    2300026: node_id36
+    2300028: node_id38
+    2300030: node_id6
+    2300032: node_id8
+    3300000: node_id10
+    3300002: node_id12
+    3300004: node_id14
+    3300006: node_id16
+    3300008: node_id18
+    3300010: node_id20
+    3300012: node_id22
+    3300014: node_id24
+    3300016: node_id26
+    3300018: node_id28
+    3300020: node_id30
+    3300022: node_id32
+    3300024: node_id34
+    3300026: node_id36
+    3300028: node_id38
+    3300030: node_id6
+    3300032: node_id8
+    4300000: node_id6
+    4300002: node_id8
+    4300004: node_id10
+    4300006: node_id12
+    4300008: node_id14
+    4300010: node_id16
+    4300012: node_id18
+    4300014: node_id20
+    4300016: node_id22
+    4300018: node_id24
+    4300020: node_id26
+    4300022: node_id28
+    4300024: node_id30
+    4300026: node_id32
+    4300028: node_id34
+    4300030: node_id36
+    4300032: node_id38
+    6400000: node_id10
+    6400002: node_id12
+    6400004: node_id14
+    6400006: node_id16
+    6400008: node_id18
+    6400010: node_id20
+    6400012: node_id22
+    6400014: node_id24
+    6400016: node_id26
+    6400018: node_id28
+    6400020: node_id30
+    6400022: node_id32
+    6400024: node_id34
+    6400026: node_id36
+    6400028: node_id38
+    6400030: node_id6
+    6400032: node_id8
+    11100000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+=======
 guid: 48e8d640674ba744d8464d7b43525d7d
 ModelImporter:
   serializedVersion: 23
@@ -110,6 +247,7 @@ ModelImporter:
   externalObjects: {}
   materials:
     importMaterials: 1
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -126,7 +264,10 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+<<<<<<< HEAD
+=======
     importConstraints: 0
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -138,6 +279,15 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
+<<<<<<< HEAD
+    globalScale: 500
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 0
+=======
     globalScale: 1
     meshCompression: 0
     addColliders: 0
@@ -145,6 +295,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -158,14 +309,21 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
+=======
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+<<<<<<< HEAD
+  importAnimation: 0
+=======
   importAnimation: 1
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -184,7 +342,11 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+<<<<<<< HEAD
+  animationType: 1
+=======
   animationType: 0
+>>>>>>> 18d8b8ad947d23f00714f79a93fce30e28a63e11
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
