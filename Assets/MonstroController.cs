@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonstroController : MonoBehaviour {
 
     public Transform target ; //cant't be bothered to do any commments
- float moveSpeed = 5;
+ float moveSpeed = 6;
     float rotationSpeed = 3;
     float range=15f;
  float range2=15f;

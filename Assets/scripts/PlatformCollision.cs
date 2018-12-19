@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlatformCollision : MonoBehaviour {
@@ -39,7 +40,11 @@ public class PlatformCollision : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.collider.GetComponent<MeshRenderer>().material.name != mesh.material.name)
+        if(this.tag == "Final")
+        {
+            StartCoroutine(delayedfinish(2));
+        }
+        else if(collision.collider.GetComponent<MeshRenderer>().material.name != mesh.material.name)
         {
             if (!destroyed)
             {
@@ -58,7 +63,6 @@ public class PlatformCollision : MonoBehaviour {
 
     IEnumerator delayedDisable(float time)
     {
-
         yield return new WaitForSeconds(time);
         col.enabled = false;
         mesh.enabled = false;
@@ -72,6 +76,12 @@ public class PlatformCollision : MonoBehaviour {
         mesh.enabled = true;
         anim.Rebind();
         destroyed = false;
+    }
+
+    IEnumerator delayedfinish(int time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(4);
     }
 
 }
